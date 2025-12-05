@@ -18,61 +18,61 @@ Before you start, ensure you have the following installed:
 - **flake8**
 - **isort**
 
-## ⚡ Quick Start (Onboarding)
+## Quick Start (Onboarding)
 
 Follow these steps to get the app running on your local machine
 
-### 1\. Clone the Repository
+### 1. Clone the Repository
 
-```
-$git clone https://github.com/OsamaAshraf01/Safi.git
-$cd Safi
+```bash
+$ git clone https://github.com/OsamaAshraf01/Safi.git
+$ cd Safi
 ```
 
-### 2\. Configure Environment
+### 2. Configure Environment
 
 **Create your Secret `.env` file:**
 
-```
-$cp .env.example .env
+```bash
+$ cp .env.example .env
 ```
 
 _Action:_ Open `.env` and fill in any missing secrets (ask the Team Lead for keys).
 
-### 3\. Setup the environment
+### 3. Setup the environment
 Download and install MiniConda from [here](https://www.anaconda.com/docs/main)
 
 Create a new environment using the following command:
 
-````
-$conda create -n safi python=3.13
-````
+```bash
+$ conda create -n safi python=3.13
+```
 
 Activate the environment:
 
-```
-$conda activate safi
+```bash
+$ conda activate safi
 ```
 
-Install the requiremnets:
+Install the requirements:
 
+```bash
+$ pip install -r requirments.txt
 ```
-$pip install -r requirments.txt
-```
-### 4\. Install Pre-Commit Hooks
+### 4. Install Pre-Commit Hooks
 
 Install hooks
 
-```
-$pre-commit install
+```bash
+$ pre-commit install
 ```
 
 _Now, Git will automatically fix your formatting when you commit code._
 
-### 5\. Run the App
+### 5. Run the App
 
-```
-$docker-compose up --build
+```bash
+$ docker-compose up --build
 ```
 
 - **Backend:** <http://localhost:5000>
@@ -81,33 +81,33 @@ $docker-compose up --build
 
 ### Checking Logs
 Check your terminal for Flask logs when running the container.
-<br>Or acces the throught terminal
-```
-$docker logs safi_dev
+<br>Or access through the terminal
+```bash
+$ docker logs safi_dev
 ```
 ### Running Tests
 
 We run tests **inside** the Docker container to match the environment using the following commands:
 
 - Run all tests
-```
-$docker-compose exec web pytest
+```bash
+$ docker-compose exec web pytest
 ```
 
 - Run only unit tests
-```
-$docker-compose exec web pytest tests/unit
+```bash
+$ docker-compose exec web pytest tests/unit
 ```
 
 ### Installing New Dependencies
 
 If `requirements.txt` gets updated you need to Rebuild the container as follows:
+```bash
+$ docker-compose up -d --build
 ```
-$docker-compose up -d --build
-```
-## Extentions for VSCode user
-if you use vscode for development you may need to download the following extentions:
-- **Github Actions**
+## Extensions for VSCode users
+if you use vscode for development, you may need to download the following extensions:
+- **GitHub Actions**
 - **black formatter**
 - **flake8**
 - **isort**
