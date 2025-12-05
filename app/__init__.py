@@ -2,16 +2,19 @@ from flask import Flask
 
 from app.logging_config import configure_logging
 from config import DevelopmentConfig
+from .routes import users_bp, groups_bp, auth_bp
 
 
 def create_app(config_class=DevelopmentConfig):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    # 1. Setup Logging BEFORE extensions
+    # register blueprints
+    app.register_blueprint(users_bp)
+    app.register_blueprint(groups_bp)
+    app.register_blueprint(auth_bp)
+
     configure_logging(app)
     app.logger.info("Starting up the application...")
-
-    # ... rest of your code ...
 
     return app
