@@ -1,6 +1,6 @@
 from typing import Optional
 
-from models.group import Group
+from app.models.group import Group
 
 from .base import IRepository
 

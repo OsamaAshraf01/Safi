@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from models.expense import Expense
+from app.models.expense import Expense
 
 from .base import IRepository
 
