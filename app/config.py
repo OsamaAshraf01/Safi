@@ -22,10 +22,6 @@ class Config:
 
     # JWT
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
-    if JWT_SECRET_KEY is None:
-        raise RuntimeError(
-            "JWT_SECRET_KEY environment variable must be set for security reasons."
-        )
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(minutes=15)
     JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=30)
 
@@ -54,3 +50,4 @@ class TestingConfig(DevelopmentConfig):
     TESTING = True
     WTF_CSRF_ENABLED = False  # Disable CSRF tokens to make testing forms easier
     MONGODB_SETTINGS = {"host": "mongomock://localhost", "db": "test_db"}
+
