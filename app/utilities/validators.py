@@ -25,7 +25,7 @@ def validate_json(schema_model):
 
                 data = schema_model.model_validate(request.get_json())
 
-                return f(validated_data=data, *args, **kwargs)
+                return f(user_data=data, *args, **kwargs)
 
             except ValidationError as e:
                 errors = []

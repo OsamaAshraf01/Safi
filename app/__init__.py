@@ -3,8 +3,10 @@ from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 
 from .config import DevelopmentConfig
+from .controllers.auth_controller import auth_bp
 from .logging_config import configure_logging
-from .routes.auth import auth_bp
+
+# from .routes.auth import auth_bp
 from .routes.groups import groups_bp
 from .routes.users import users_bp
 

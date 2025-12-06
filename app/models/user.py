@@ -13,7 +13,7 @@ class User(BaseModel):
         ..., min_length=3, max_length=18, description="Unique username"
     )
     email: EmailStr = Field(..., description="Valid email address")
-    password_hash: str = Field(..., alias="password")
+    password_hash: str = Field(...)
     user_id: UUID = Field(default_factory=uuid4)
     phone_number: Optional[str] = None
 
