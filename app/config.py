@@ -40,14 +40,9 @@ class ProductionConfig(Config):
     SESSION_COOKIE_SECURE = True
 
 
-# Note: TestingConfig inherits from DevelopmentConfig (not directly from Config)
-# to ensure settings like SESSION_COOKIE_SECURE = False are inherited, which is
-# appropriate for testing environments. This inheritance is intentional and should
-# be maintained unless testing requirements change.
 class TestingConfig(DevelopmentConfig):
     """Pytest Settings"""
 
     TESTING = True
     WTF_CSRF_ENABLED = False  # Disable CSRF tokens to make testing forms easier
     MONGODB_SETTINGS = {"host": "mongomock://localhost", "db": "test_db"}
-
